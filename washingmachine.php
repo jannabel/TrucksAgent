@@ -32,9 +32,15 @@ include("php/Trucks/getdata.php");
                         <p class="text-primary m-0 fw-bold">Datos del Camion</p>
                     </div>
                     <div class="card-body">
-                        <div class="mb-3" style="padding-top: 4px;padding-bottom: 10px;text-align: right;"><button
-                                class="btn btn-primary" type="submit" style="background: rgb(0,37,145);"><i
-                                    class="fa fa-print"></i>&nbsp; Generar Reporte</button></div>
+                        <div class="mb-3" style="padding-top: 4px;padding-bottom: 10px;text-align: right;">
+                        <a href="reports/classreport.php?id=<?= $row["IdCamion"]?>"   class="btn btn-primary" type="submit" style="background: rgb(0,37,145);"><i
+                                    class="fa fa-print"></i>&nbsp; Generar Reporte</a></div>
+
+                                    <form class="form-inline" method="post" action="crear_pdf.php">
+                <button type="submit" id="pdf" name="generate_pdf" class="btn btn-primary"><i class="fa fa-pdf" aria-hidden="true"></i>
+                Exportar PDF</button>
+                </form>
+
                         <form>
                             <div class="row">
                                 <div class="col">
@@ -68,20 +74,20 @@ include("php/Trucks/getdata.php");
                                     <div class="mb-3"><label class="form-label" for="first_name"
                                             style="font-size: 17px;"><strong>Cantidad de
                                                 Lavadoras</strong></label><input value="<?= $row["CantLavadoras"]?>"
-                                            class="form-control" type="number" readonly="" name="CantLavadoras">
+                                            class="form-control" type="number" readonly="" id="CantLavadoras" name="CantLavadoras">
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3"><label class="form-label" for="last_name"
                                             style="font-size: 17px;"><strong>Valor de la
                                                 Carga</strong></label><input value="<?= $row["ValorCarga"]?>"
-                                            class="form-control" type="number" readonly="" name="ValorCarga"></div>
+                                            class="form-control" type="number" readonly id="ValorCarga"  name="ValorCarga"></div>
                                 </div>
                                 <div class="col">
                                     <div class="mb-3"><label class="form-label" for="last_name"
                                             style="font-size: 17px;"><strong>Peso total de la
                                                 Carga</strong></label><input value="<?= $row["PesoCarga"]?>"
-                                            class="form-control" type="number" readonly="" name="PesoCarga"></div>
+                                            class="form-control" type="number" readonly id="PesoCarga"  name="PesoCarga"></div>
                                 </div>
                             </div>
                         </form>
@@ -170,50 +176,14 @@ include("php/Trucks/getdata.php");
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
 
-    <script>
-        function AddRowMachine() {
-            function codegenerate() {
-                code = "LAV" + Math.floor(Math.random() * ((50000 + 1) - 10000) + 10000);
-                var input = document.getElementById("in");
-                input.value = code;
-                input.id = code;
-            }
 
+     
 
-            document.getElementById("wmtable").insertRow(-1).innerHTML =
-                '<tr><td style="width: 188px;"><div class="mb-1 form-group"><input id="in"  name="Codigo[]" value="CODIGO" class="form-control form-control-sm font-sm" type="text" readonly="" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Marca[]" required  class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Modelo[]" required  class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Valor[]"  required class="form-control" type="number" style="height: 38px;min-height: 28px;"></div></td><td class="w-10x"><input class="form-control" required  name="Peso[]"  type="number" style="height: 38px;min-height: 28px;"></td><td class="w-10x"><button class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" onclick="DeleteRowMachine(this);" type="button" style="width: 112px;height: 38px;"><i class="fa fa-trash" style="font-size: 16px;"></i></button></td><tr>';
-            codegenerate();
-        }
-
-        function DeleteRowMachine(btn) {
-            var row = btn.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-
-
-        function Delete(ID, btn) {
-        
-            $.ajax({
-                type: "POST",
-                url: "php/WashingMachine/delete.php",
-                cache: false,
-                data: {
-                    ID
-                },
-                error: function () {
-                    alert("ERROR");
-                },
-                success: function (response) {
-                   
-                }
-            });
-            DeleteRowMachine(btn);
-
-        }
-    </script>
+ 
 
 
 
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/Billing-Table-with-Add-Row--Fixed-Header-Feature.js"></script>
