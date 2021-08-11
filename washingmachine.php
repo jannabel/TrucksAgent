@@ -124,6 +124,7 @@ include("php/Trucks/getdata.php");
                                                         <input hidden value="<?= $row["IdCamion"]; ?>" name="IdCamion"  class="form-control form-control-sm font-sm" type="text" readonly="" style="height: 38px;">
                                                      
                                                         <tbody class="h-15x" style="height: 200px;">
+                                                        <tr> <td ></td> </tr>
                                                             <?php foreach($rowmachine as $rowm ):?>
                                                             <tr>
                                                                 <td style="width: 188px;">
@@ -180,7 +181,7 @@ include("php/Trucks/getdata.php");
 
 
             document.getElementById("wmtable").insertRow(-1).innerHTML =
-                '<tr><td style="width: 188px;"><div class="mb-1 form-group"><input id="in"  name="Codigo[]" value="CODIGO" class="form-control form-control-sm font-sm" type="text" readonly="" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Marca[]"   class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Modelo[]"  class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Valor[]"  class="form-control" type="number" style="height: 38px;min-height: 28px;"></div></td><td class="w-10x"><input class="form-control"  name="Peso[]"  type="number" style="height: 38px;min-height: 28px;"></td><td class="w-10x"><button class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" onclick="DeleteRowMachine(this);" type="button" style="width: 112px;height: 38px;"><i class="fa fa-trash" style="font-size: 16px;"></i></button></td><tr>';
+                '<tr><td style="width: 188px;"><div class="mb-1 form-group"><input id="in"  name="Codigo[]" value="CODIGO" class="form-control form-control-sm font-sm" type="text" readonly="" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Marca[]" required  class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Modelo[]" required  class="form-control form-control-sm font-sm" type="text" style="height: 38px;"></div></td><td class="w-10x"><div class="mb-1 form-group"><input  name="Valor[]"  required class="form-control" type="number" style="height: 38px;min-height: 28px;"></div></td><td class="w-10x"><input class="form-control" required  name="Peso[]"  type="number" style="height: 38px;min-height: 28px;"></td><td class="w-10x"><button class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" onclick="DeleteRowMachine(this);" type="button" style="width: 112px;height: 38px;"><i class="fa fa-trash" style="font-size: 16px;"></i></button></td><tr>';
             codegenerate();
         }
 

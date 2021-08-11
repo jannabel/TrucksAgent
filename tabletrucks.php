@@ -30,7 +30,8 @@ require_once('php/Trucks/read.php');
                         </div>
                         <div class="card-body" style="background: #ffffff;border-color: rgb(133, 135, 150);border-top-color: rgb(133,135,150);">
                             <div class="row">
-                                <div class="col-md-6 text-nowrap"><a class="btn btn-primary btn-sm" role="button" style="width: 62px;height: 33px;color: #ffffff;background: rgb(0,37,145);font-size: 16px;text-align: center;" href="formtrucks.php"><i class="fa fa-plus"></i>&nbsp;</a></div>
+                                <div class="col-md-6 text-nowrap"><a class="btn btn-primary btn-sm" role="button" style="width: 62px;height: 33px;color: #ffffff;background: rgb(0,37,145);font-size: 16px;text-align: center;" href="formtrucks.php"><i style="margin-top: 6px;" class="fa fa-plus"></i>&nbsp;</a></div>
+                              
                                 <div class="col-md-6">
                                     <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                                 </div>
@@ -63,9 +64,9 @@ require_once('php/Trucks/read.php');
                                             <td>'.$row["ValorCarga"].'</td>
                                             <td>'.$row["PesoCarga"].'</td>
                                             <td>'.$row["CantLavadoras"].'</td>
-                                            <td class="w-10x"><a href="washingmachine.php?id='.$row["IdCamion"].'" class="btn btn-primary btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;background: rgb(0,133,255);border-color: rgb(0,133,255);"><i class="fas fa-eye" style="font-size: 16px;"></i></a></td>
-                                            <td class="w-10x"><a href="formtrucks.php?id='.$row["IdCamion"].'" class="btn btn-primary btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;background: rgb(0,14,55);border-color: rgb(0,14,55);border-top-color: rgb(255,255,255);"><i class="fa fa-edit" style="font-size: 16px;"></i></a></td>
-                                            <td class="w-10x"><a href="php/Trucks/delete.php?id='.$row["IdCamion"].'" class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;"><i class="fa fa-trash" style="font-size: 16px;"></i></a></td>
+                                            <td class="w-10x"><a href="washingmachine.php?id='.$row["IdCamion"].'" class="btn btn-primary btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;background: rgb(0,133,255);border-color: rgb(0,133,255);"><i class="fas fa-eye" style="margin-top:3.5px;font-size: 16px;"></i></a></td>
+                                            <td class="w-10x"><a href="formtrucks.php?id='.$row["IdCamion"].'" class="btn btn-primary btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;background: rgb(0,14,55);border-color: rgb(0,14,55);border-top-color: rgb(255,255,255);"><i class="fa fa-edit" style="margin-top:3.5px;font-size: 16px;"></i></a></td>
+                                            <td class="w-10x"><a href="php/Trucks/delete.php?id='.$row["IdCamion"].'" class="btn btn-danger btn-sm d-block delete-row btn-xs w-100" type="button" style="width: 112px;height: 28px;"><i class="fa fa-trash" style="margin-top:3.5px;font-size: 16px;"></i></a></td>
                                         </tr>';
                                     };?>
                                     </tbody>

@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="assets/css/Billing-Table-with-Add-Row--Fixed-Header-Feature.css">
 </head>
 
-<body class="bg-gradient-primary">
+<body id="page-top" class="bg-gradient-primary">
+
+    <div id="wrapper">
+
+    <?php include('global/navbar.php'); ?>
+
     <div class="container-lg" style="text-align: center;padding-top: 119px;">
         <div class="card shadow-lg o-hidden border-0 my-5">
             <div class="card-body p-0">
@@ -26,24 +31,31 @@
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">¡Crea una cuenta!</h4>
                             </div>
-                            <form class="user">
+                            <form action="php/Auth/register.php" method="POST" class="user">
                                 <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="Nombre"></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="Apellidos"></div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombre" name="Nombre"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Apellidos" name="Apellidos"></div>
                                 </div>
-                                <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Correo Electronico" name="email"></div>
-                                <div class="mb-3"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password"></div><button class="btn btn-primary d-block btn-user w-100" type="submit" style="background: #002591;">Registrarse</button>
-                                <hr>
-                                <hr>
+                                <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Correo Electronico" name="Email"></div>
+                                <div class="mb-3"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="Password"></div><button class="btn btn-primary d-block btn-user w-100" type="submit" style="background: #002591;">Registrar Usuario</button>
+                               
                             </form>
-                            <div class="text-center"></div>
-                            <div class="text-center"><a class="small" href="login.html">¿Ya tienes una cuenta? Inicia Sesión</a></div>
-                        </div>
+                           
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <?php include('global/footer.php'); ?>
+
+</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/Billing-Table-with-Add-Row--Fixed-Header-Feature.js"></script>
