@@ -36,10 +36,7 @@ include("php/Trucks/getdata.php");
                         <a href="reports/classreport.php?id=<?= $row["IdCamion"]?>"   class="btn btn-primary" type="submit" style="background: rgb(0,37,145);"><i
                                     class="fa fa-print"></i>&nbsp; Generar Reporte</a></div>
 
-                                    <form class="form-inline" method="post" action="crear_pdf.php">
-                <button type="submit" id="pdf" name="generate_pdf" class="btn btn-primary"><i class="fa fa-pdf" aria-hidden="true"></i>
-                Exportar PDF</button>
-                </form>
+
 
                         <form>
                             <div class="row">
@@ -82,12 +79,17 @@ include("php/Trucks/getdata.php");
                                             style="font-size: 17px;"><strong>Valor de la
                                                 Carga</strong></label><input value="<?= $row["ValorCarga"]?>"
                                             class="form-control" type="number" readonly id="ValorCarga"  name="ValorCarga"></div>
+                                            <input hidden value="<?= $row["ValorCarga"]?>"
+                                            class="form-control" type="number"  id="ValorCargaC"  name="">
+                                            
                                 </div>
                                 <div class="col">
                                     <div class="mb-3"><label class="form-label" for="last_name"
                                             style="font-size: 17px;"><strong>Peso total de la
-                                                Carga</strong></label><input value="<?= $row["PesoCarga"]?>"
-                                            class="form-control" type="number" readonly id="PesoCarga"  name="PesoCarga"></div>
+                                                Carga</strong></label>
+                                                <input value="<?= $row["PesoCarga"]?>" class="form-control" type="number" readonly id="PesoCarga"  name="PesoCarga"></div>
+
+                                                <input hidden  value="<?= $row["PesoCarga"]?>" class="form-control" type="number" readonly  id="PesoCargaC"  name="PesoCargaC">
                                 </div>
                             </div>
                         </form>
